@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Share a Place</title>
+    <link rel="stylesheet" href="assets/styles/app.css" />
+    <link rel="stylesheet" href="assets/styles/share-place.css" />
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAV4cetLLZ6jZhiFQg5P4hbv1JGDxYdVvA"
+      defer
+    ></script>
+    <script src="/dist/assets/scripts/SharePlace.js" defer type="module"></script>
+  </head>
+  <body>
+    <template id="modal-template">
+      <div class="backdrop"></div>
+      <div class="modal"></div>
+    </template>
+    <template id="loading-modal-content">
+      <div class="modal__content centered">
+        <div class="lds-dual-ring"></div>
+      </div>
+    </template>
+
+    <header>
+      <h1>Share a Place!</h1>
+    </header>
+
+    <section id="selected-place">
+      <div id="map">
+        <p>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.454895180373!2d3.3808087140481997!3d6.590242824213951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b92f4f2b70779%3A0xf4eb40976260e64a!2sMusa%20Adewokun%20St%2C%20Ojota%20105102%2C%20Ikeja!5e0!3m2!1sen!2sng!4v1665047199288!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </p>
+      </div>
+    </section>
+
+    <section id="share-controls">
+      <input
+        id="share-link"
+        type="text"
+        readonly
+        value="Select a place to get a sharable link."
+      />
+      <button id="share-btn">Share Place</button>
+    </section>
+
+    <section id="place-data">
+      <form>
+        <label for="address">Address</label>
+        <input type="text" />
+        <button type="submit">Find Place</button>
+      </form>
+      <button id="locate-btn">Get Current Location</button>
+    </section>
+  </body>
+</html>
